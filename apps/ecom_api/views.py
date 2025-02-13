@@ -5,10 +5,12 @@ from .serializers import ProductSerializer, CategorySerializer
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
 class ProductList(APIView):
+
     def get(self, request):
         products = Product.objects.all()
         if not products.exists():
@@ -24,6 +26,7 @@ class ProductList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProductDetail(APIView):
+
     def get_object(self, pk):
         try:
             return Product.objects.get(pk=pk)
