@@ -37,9 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ecom_api.apps.EcomApiConfig',
-    'users.apps.UsersConfig',
+    'apps.ecom_api',
+    'apps.users',
+    'apps.orders',
+    'apps.payments',
     'rest_framework',
+    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
