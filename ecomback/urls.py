@@ -26,4 +26,5 @@ urlpatterns = [
     path("api/", include("apps.ecom_api.urls")),
     path("api/auth/", include("apps.users.urls")),
     path("admin/", admin.site.urls),
+    path("api/cart/", include("apps.cart.urls")),
 ]
